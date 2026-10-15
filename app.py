@@ -17,6 +17,7 @@ st.set_page_config(
 )
 
 # Project paths
+APP_DIR = Path(__file__).parent
 MP_DATA_PATH = (
     APP_DIR
     / "data"
