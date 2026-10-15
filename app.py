@@ -17,14 +17,13 @@ st.set_page_config(
 )
 
 # Project paths
-APP_DIR = Path(__file__).parent
 MP_DATA_PATH = (
-    APP_DIR.parent
-    / "17th_Lok_Sabha_Analysis"
+    APP_DIR
     / "data"
     / "processed"
     / "17th_cleaned.csv"
 )
+
 RAG_DATA_PATH = (
     APP_DIR
     / "data"
