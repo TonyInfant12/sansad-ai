@@ -1,0 +1,30 @@
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Jupyter notebook checkpoints
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Generated RAG index
+data/processed/faiss_president_address/
+
+# Local source documents and datasets
+data/raw/
+
+# Generated and processed data
+data/processed/

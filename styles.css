@@ -1,0 +1,450 @@
+
+/* Colour palette and shared styles */
+:root {
+    --sansad-green: #173d32;
+    --sansad-green-light: #245344;
+    --sansad-gold: #b69a5a;
+    --sansad-ivory: #f7f5ef;
+    --sansad-paper: #fffefa;
+    --sansad-ink: #202c27;
+    --sansad-muted: #68736c;
+    --sansad-border: #e5e1d6;
+}
+
+/* Main application background */
+.stApp {
+    background: var(--sansad-ivory);
+    color: var(--sansad-ink);
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+.block-container {
+    max-width: 1440px;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Typography */
+html, body, [class*="st-"] {
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+h1, h2, h3 {
+    color: var(--sansad-green);
+    letter-spacing: -0.035em;
+}
+
+h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem) !important;
+    font-weight: 750 !important;
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem) !important;
+    font-weight: 700 !important;
+}
+
+h3 {
+    font-weight: 650 !important;
+}
+
+/* Hero section */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(
+        120deg,
+        #12362c 0%,
+        #1b493a 65%,
+        #285543 100%
+    );
+    color: #fffefa;
+    border-radius: 20px;
+    padding: clamp(2rem, 5vw, 4.5rem);
+    margin: 0 0 1.5rem 0;
+    animation: sansad-enter 0.7s ease-out both;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    right: -90px;
+    top: -120px;
+    border: 1px solid rgba(226, 205, 151, 0.24);
+    border-radius: 50%;
+    box-shadow:
+        0 0 0 30px rgba(226, 205, 151, 0.04),
+        0 0 0 65px rgba(226, 205, 151, 0.035);
+    pointer-events: none;
+}
+
+.hero-eyebrow,
+.section-kicker {
+    color: var(--sansad-gold);
+    font-size: 0.75rem;
+    font-weight: 750;
+    letter-spacing: 0.18em;
+    margin-bottom: 0.9rem;
+}
+
+.hero h1 {
+    color: #fffefa !important;
+    margin: 0;
+    line-height: 1;
+}
+
+.hero h1 span {
+    color: #d6bd7c;
+}
+
+.hero-subtitle {
+    color: #e4e9e3;
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    max-width: 650px;
+    line-height: 1.8;
+    margin-top: 1.2rem;
+}
+
+.hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.7rem;
+    color: #d8e1d9;
+    font-size: 0.85rem;
+    margin-top: 1.7rem;
+}
+
+.hero-meta-dot {
+    color: #d6bd7c;
+}
+
+/* Hero image */
+[data-testid="stImage"] {
+    margin-bottom: 1.5rem;
+}
+
+[data-testid="stImage"] img {
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Section introductions */
+.section-intro {
+    padding: 1.6rem 0 1.2rem;
+    animation: sansad-enter 0.7s ease-out both;
+}
+
+.section-intro h2,
+.section-heading h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.section-intro p,
+.section-heading p {
+    color: var(--sansad-muted);
+    max-width: 760px;
+    line-height: 1.8;
+}
+
+.section-heading {
+    margin: 1rem 0 1.5rem;
+}
+
+/* Navigation tabs */
+button[data-baseweb="tab"] {
+    color: var(--sansad-muted);
+    font-weight: 650;
+    padding: 0.9rem 1.1rem;
+}
+
+button[data-baseweb="tab"][aria-selected="true"] {
+    color: var(--sansad-green);
+}
+
+div[data-baseweb="tab-highlight"] {
+    background-color: var(--sansad-gold);
+}
+
+div[data-baseweb="tab-border"] {
+    background-color: var(--sansad-border);
+}
+
+/* Metric cards */
+[data-testid="stMetric"] {
+    background: var(--sansad-paper);
+    border: 1px solid var(--sansad-border);
+    border-radius: 14px;
+    padding: 1.15rem 1.3rem;
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease;
+}
+
+[data-testid="stMetricLabel"] {
+    color: var(--sansad-muted);
+    font-weight: 600;
+}
+
+[data-testid="stMetricValue"] {
+    color: var(--sansad-green);
+    font-weight: 750;
+}
+
+
+/* Filters and input fields */
+[data-testid="stTextInput"] label,
+[data-testid="stTextArea"] label,
+[data-testid="stSelectbox"] label {
+    color: var(--sansad-ink) !important;
+    font-weight: 600;
+}
+
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    background-color: var(--sansad-paper) !important;
+    color: var(--sansad-ink) !important;
+    border-color: var(--sansad-border) !important;
+    border-radius: 10px;
+    -webkit-text-fill-color: var(--sansad-ink) !important;
+}
+
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
+    color: #777f78 !important;
+    -webkit-text-fill-color: #777f78 !important;
+    opacity: 1;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus {
+    border-color: var(--sansad-green-light) !important;
+    box-shadow: 0 0 0 1px var(--sansad-green-light);
+}
+
+/* Dropdown menus */
+[data-baseweb="popover"],
+[data-baseweb="popover"] > div,
+ul[role="listbox"] {
+    background-color: var(--sansad-paper) !important;
+    color: var(--sansad-ink) !important;
+}
+
+ul[role="listbox"] li,
+li[role="option"] {
+    background-color: var(--sansad-paper) !important;
+    color: var(--sansad-ink) !important;
+}
+
+li[role="option"]:hover,
+li[role="option"][aria-selected="true"] {
+    background-color: #e9eee8 !important;
+    color: var(--sansad-green) !important;
+}
+
+[data-baseweb="select"] svg {
+    fill: var(--sansad-muted) !important;
+    color: var(--sansad-muted) !important;
+}
+
+
+
+/* Text input cursor and focus states */
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea {
+    caret-color: var(--sansad-green) !important;
+    cursor: text !important;
+}
+
+[data-testid="stTextInput"] input:focus,
+[data-testid="stTextArea"] textarea:focus {
+    outline: none !important;
+    border-color: var(--sansad-green-light) !important;
+    box-shadow: 0 0 0 2px rgba(36, 83, 68, 0.16) !important;
+    transition:
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+/* Pointer feedback for dropdowns */
+[data-testid="stSelectbox"],
+[data-testid="stSelectbox"] label,
+[data-testid="stSelectbox"] [data-baseweb="select"],
+[data-testid="stSelectbox"] [data-baseweb="select"] > div,
+[data-testid="stSelectbox"] [data-baseweb="select"] svg {
+    cursor: pointer !important;
+}
+
+/* Pointer feedback for buttons */
+.stButton button,
+button[data-baseweb="tab"],
+[data-testid="stExpander"] summary {
+    cursor: pointer !important;
+}
+
+/* Smooth hover feedback */
+.stButton button,
+[data-testid="stMetric"],
+[data-testid="stExpander"] {
+    transition:
+        transform 160ms ease,
+        border-color 160ms ease,
+        box-shadow 160ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+    [data-testid="stMetric"]:hover {
+        transform: translateY(-2px);
+        border-color: #c9bd9e;
+        box-shadow: 0 5px 16px rgba(32, 44, 39, 0.06);
+    }
+
+    [data-testid="stExpander"]:hover {
+        border-color: #c9bd9e;
+    }
+}
+
+
+/* Buttons */
+.stButton > button {
+    border-radius: 10px;
+    min-height: 2.8rem;
+    font-weight: 650;
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        background-color 160ms ease;
+}
+
+.stButton > button[kind="primary"] {
+    background: var(--sansad-green);
+    border: 1px solid var(--sansad-green);
+    color: #fffefa;
+}
+
+.stButton > button[kind="primary"]:hover {
+    background: var(--sansad-green-light);
+    border-color: var(--sansad-green-light);
+    box-shadow: 0 5px 16px rgba(23, 61, 50, 0.16);
+    transform: translateY(-1px);
+}
+
+/* Data table */
+[data-testid="stDataFrame"] {
+    border: 1px solid var(--sansad-border);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--sansad-paper);
+}
+
+/* Information and answer panels */
+.notice-panel,
+.answer-panel {
+    background: var(--sansad-paper);
+    border: 1px solid var(--sansad-border);
+    border-left: 4px solid var(--sansad-gold);
+    border-radius: 12px;
+    padding: 1rem 1.2rem;
+    margin: 0.8rem 0 1.2rem;
+}
+
+.notice-panel strong {
+    color: var(--sansad-green);
+}
+
+.notice-panel p {
+    color: var(--sansad-muted);
+    margin: 0.4rem 0 0;
+    line-height: 1.7;
+}
+
+/* Retrieved source passages */
+[data-testid="stExpander"] {
+    background: var(--sansad-paper);
+    border: 1px solid var(--sansad-border);
+    border-radius: 10px;
+    margin-bottom: 0.5rem;
+}
+
+[data-testid="stExpander"] summary {
+    color: var(--sansad-green);
+    font-weight: 600;
+}
+
+/* Dividers and captions */
+hr {
+    border-color: var(--sansad-border);
+}
+
+[data-testid="stCaptionContainer"] {
+    color: var(--sansad-muted);
+}
+
+/* Footer */
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    border-top: 1px solid var(--sansad-border);
+    padding-top: 1.2rem;
+    margin-top: 3rem;
+    color: var(--sansad-muted);
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+}
+
+/* Subtle entrance animation */
+@keyframes sansad-enter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Small screens */
+@media (max-width: 640px) {
+    .block-container {
+        padding: 1rem 1rem 2rem;
+    }
+
+    .hero {
+        border-radius: 14px;
+        padding: 2rem 1.4rem;
+    }
+
+    .hero::after {
+        opacity: 0.45;
+    }
+
+    .hero-meta {
+        gap: 0.5rem;
+    }
+
+    .app-footer {
+        flex-direction: column;
+    }
+}
